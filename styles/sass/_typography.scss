@@ -1,0 +1,24 @@
+html {
+    font-size: 55%;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+ul {
+    list-style: none;
+}
+
+a, p {
+    @include font-def('Roboto', sans-serif, 2rem, $black, 0.1rem, 3.2rem, right);
+    text-decoration: none;
+}
+
+ul li:nth-child(3) a {
+    font-size: 3rem;
+}
+
+form {
+    font-size: 2rem;
+}

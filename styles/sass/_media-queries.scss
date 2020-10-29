@@ -1,0 +1,12 @@
+@media (min-width: 768px) {
+    #contact {
+        & header { background: none; }
+        & .bar,
+        & #menu { display: none; }
+        & nav ul { 
+            @include position(relative, 0, auto, auto, auto, 0);
+            display: flex;
+            flex-flow: row nowrap;
+        }
+    }
+}

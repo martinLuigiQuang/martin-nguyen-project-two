@@ -1,0 +1,45 @@
+// COLOURS
+$black: #2c2c2c;
+$dark-grey-blue: #285e64;
+$orangey-yellow: #f6a823;
+$grey: #4f4f4f;
+$accent: #05afc1;
+$rust-red: #a82706;
+$white-shade: #f0efed;
+$white: #f6f6f6;
+
+// OUTER WRAPPER
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+    min-height: 100vh;
+    width: 100vw;
+    max-width: 1280px;
+    overflow: hidden;
+}
+
+// MIXINS
+@mixin font-def($font1, $font2, $size, $color, $letter-spacing:auto, $line-height:auto, $text-align:left) {
+    font-family: $font1, $font2;
+    font-size: $size;
+    color: $color;
+    letter-spacing: $letter-spacing;
+    line-height: $line-height;
+    text-align: $text-align;
+}
+
+@mixin position($type:relative, $z-index:0, $top:auto, $right:auto, $bottom:auto, $left:auto) {
+    position: $type;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    z-index: $z-index;
+}
+
+@mixin resize($width, $height) {
+    width: $width;
+    height: $height;
+}
