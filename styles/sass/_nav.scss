@@ -1,3 +1,13 @@
+header p {
+    @include position(absolute, 4, 120px, 0, auto, 100vw);
+    width: 50vw;
+    text-align: center;
+    font-size: 2rem;
+    background: $grey;
+    color: $white-shade;
+    padding: 10px 0;
+    transition: transform 0.5s;
+}
 nav {
     @include position(absolute, 1, 0, 0, auto, 100vw);
     transition: transform 0.5s;
@@ -15,6 +25,7 @@ input#menu {
         opacity: 0;
         transition: opacity 0.5s; 
     }
+    &:checked ~ p { transform: translateX(-50vw); }
 }
 .bar {
     @include position(absolute, 2, 25px, 25px);
@@ -38,17 +49,13 @@ ul {
     display: flex;
     flex-flow: column nowrap;
     li {
-        a:not(#sophie) {
+        a {
             padding: 20px 20px 20px 0;
         }
-        #sophie {
+        &:nth-child(3) {
             text-transform: uppercase;
-            @include position(absolute, 1, 168px, auto, auto, 0);
-            @include resize(50vw, auto);
-            text-align: center;
-            padding: 10px;
-            background: $accent;
-            color: $white-shade;
+            height: 0;
+            overflow: hidden;
         }
     }
 }

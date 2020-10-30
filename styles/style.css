@@ -202,6 +202,10 @@ template {
   display: none;
 }
 
+figure {
+  margin: 0;
+}
+
 * {
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
@@ -243,20 +247,25 @@ template {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  position: relative;
-  height: auto;
-  min-height: 100vh;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
   width: 100vw;
   max-width: 1280px;
   overflow: hidden;
 }
 
 html {
-  font-size: 55%;
+  font-size: 50%;
 }
 
 h1 {
-  font-size: 4rem;
+  font-family: "Lora", serif;
+  color: #2c2c2c;
+  letter-spacing: 0;
+  line-height: 9.2rem;
+  text-align: auto;
 }
 
 ul {
@@ -265,11 +274,11 @@ ul {
 
 a, p {
   font-family: "Roboto", sans-serif;
-  font-size: 2rem;
   color: #2c2c2c;
   letter-spacing: 0.1rem;
   line-height: 3.2rem;
   text-align: right;
+  font-size: 2.5rem;
   text-decoration: none;
 }
 
@@ -279,6 +288,25 @@ ul li:nth-child(3) a {
 
 form {
   font-size: 2rem;
+}
+
+header p {
+  position: absolute;
+  top: 120px;
+  right: 0;
+  bottom: auto;
+  left: 100vw;
+  z-index: 4;
+  width: 50vw;
+  text-align: center;
+  font-size: 2rem;
+  background: #4f4f4f;
+  color: #f0efed;
+  padding: 10px 0;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
 }
 
 nav {
@@ -330,6 +358,11 @@ input#menu:checked ~ .bar:before {
   transition: opacity 0.5s;
 }
 
+input#menu:checked ~ p {
+  -webkit-transform: translateX(-50vw);
+          transform: translateX(-50vw);
+}
+
 .bar, .bar:before, .bar:after {
   position: absolute;
   top: 25px;
@@ -375,55 +408,85 @@ ul {
           flex-flow: column nowrap;
 }
 
-ul li a:not(#sophie) {
+ul li a {
   padding: 20px 20px 20px 0;
 }
 
-ul li #sophie {
+ul li:nth-child(3) {
   text-transform: uppercase;
-  position: absolute;
-  top: 168px;
-  right: auto;
-  bottom: auto;
-  left: 0;
-  z-index: 1;
-  width: 50vw;
-  height: auto;
-  text-align: center;
-  padding: 10px;
-  background: #05afc1;
-  color: #f0efed;
-}
-
-main {
-  background-color: #f0efed;
+  height: 0;
+  overflow: hidden;
 }
 
 #contact header {
-  min-height: 200px;
-  -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
-  background: #f6a823 url(../../assets/assets/contact-image-1.jpg);
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
   position: relative;
 }
 
+#contact header figure {
+  width: 100%;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+#contact header figure img {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
 #contact header h1 {
+  font-size: 3.5rem;
   text-transform: uppercase;
-  margin: 0 25px 0;
-  position: absolute;
-  top: auto;
-  right: auto;
-  bottom: 0;
-  left: auto;
-  z-index: 0;
+  margin: 0;
+  text-align: center;
+  background: #05afc1;
+}
+
+#contact main {
+  background-color: #f0efed;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+}
+
+#contact main .wrapper {
+  padding: 0 25px;
+  height: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
 }
 
 form {
-  padding: 25px;
+  padding: 25px 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -436,24 +499,25 @@ form {
 
 form #name, form #email {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 0px;
-          flex: 1 0 0;
-  padding: 10px;
+      -ms-flex: 1 0 calc(50% - 50px);
+          flex: 1 0 calc(50% - 50px);
+  padding: 10px 0 10px 10px;
+  min-width: 150px;
   border: none;
 }
 
 form #message {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 calc(100vw - 50px);
-          flex: 1 0 calc(100vw - 50px);
+      -ms-flex: 1 0 calc(100% - 50px);
+          flex: 1 0 calc(100% - 50px);
   border: none;
   padding: 10px;
 }
 
 form button {
   -webkit-box-flex: 1;
-      -ms-flex: 1 0 calc(100vw - 50px);
-          flex: 1 0 calc(100vw - 50px);
+      -ms-flex: 1 0 calc(100% - 50px);
+          flex: 1 0 calc(100% - 50px);
   border: none;
   background-color: #05afc1;
   padding: 5px;
@@ -462,6 +526,13 @@ form button {
 
 .contact-info {
   background-color: #f6f6f6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
 }
 
 .contact-info .social-media {
@@ -491,7 +562,7 @@ form button {
   -webkit-box-flex: 0;
       -ms-flex: 0 0 10vw;
           flex: 0 0 10vw;
-  height: 10vw;
+  padding: 25px 0;
   text-align: center;
   color: #f6a823;
 }
@@ -533,20 +604,27 @@ footer p {
 }
 
 @media (min-width: 768px) {
-  #contact header {
-    background: none;
+  html {
+    font-size: 62.5%;
+  }
+  a, p {
+    font-size: 2rem;
+  }
+  #contact .wrapper {
+    margin: 0 auto;
   }
   #contact .bar, #contact .bar:before, #contact .bar:after,
   #contact #menu {
     display: none;
   }
-  #contact nav ul {
+  #contact nav {
     position: relative;
-    top: auto;
-    right: auto;
-    bottom: auto;
     left: 0;
-    z-index: 0;
+  }
+  #contact nav ul {
+    width: 100%;
+    height: auto;
+    padding: 20px 25%;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -554,5 +632,98 @@ footer p {
     -webkit-box-direction: normal;
         -ms-flex-flow: row nowrap;
             flex-flow: row nowrap;
+    -webkit-box-pack: space-evenly;
+        -ms-flex-pack: space-evenly;
+            justify-content: space-evenly;
+  }
+  #contact nav ul li:nth-child(3) {
+    height: auto;
+    background: #f6a823;
+    color: #2c2c2c;
+    font-weight: 700;
+  }
+  #contact nav ul li a {
+    padding: 0;
+  }
+  #contact header {
+    height: calc(25vw + 72px);
+    max-height: 392px;
+  }
+  #contact header h1 {
+    font-size: 6rem;
+    position: absolute;
+    background: none;
+    margin: 0;
+    left: 10%;
+    bottom: -40px;
+  }
+  #contact header p {
+    background: #2c2c2c83;
+    top: auto;
+    bottom: 0;
+    left: auto;
+    width: auto;
+    height: auto;
+    padding: 0 10px;
+    margin: 0;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  #contact main {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-flow: column nowrap;
+            flex-flow: column nowrap;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  #contact main .wrapper {
+    width: 80%;
+    padding: 0;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-flow: row-reverse nowrap;
+            flex-flow: row-reverse nowrap;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  #contact main .wrapper .contact-info {
+    margin-top: 25px;
+    -ms-flex-item-align: start;
+        -ms-grid-row-align: start;
+        align-self: start;
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 30%;
+            flex: 0 0 30%;
+  }
+  #contact main .wrapper .contact-info .social-media a {
+    -webkit-box-pack: start;
+        -ms-flex-pack: start;
+            justify-content: flex-start;
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+  #contact main .wrapper .contact-info .address {
+    -webkit-box-align: start;
+        -ms-flex-align: start;
+            align-items: flex-start;
+  }
+  #contact main .wrapper .contact-info .address p {
+    text-align: left;
+  }
+  #contact main .wrapper form {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 65%;
+            flex: 0 0 65%;
+  }
+  #contact main .wrapper form #name,
+  #contact main .wrapper form #email {
+    min-width: 300px;
   }
 }

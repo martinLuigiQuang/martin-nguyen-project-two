@@ -12,18 +12,16 @@ $white: #f6f6f6;
 .wrapper {
     display: flex;
     flex-direction: column;
-    position: relative;
-    height: auto;
-    min-height: 100vh;
+    justify-content: space-between;
+    height: 100vh;
     width: 100vw;
     max-width: 1280px;
     overflow: hidden;
 }
 
 // MIXINS
-@mixin font-def($font1, $font2, $size, $color, $letter-spacing:auto, $line-height:auto, $text-align:left) {
+@mixin font-def($font1, $font2, $color, $letter-spacing:auto, $line-height:auto, $text-align:left) {
     font-family: $font1, $font2;
-    font-size: $size;
     color: $color;
     letter-spacing: $letter-spacing;
     line-height: $line-height;

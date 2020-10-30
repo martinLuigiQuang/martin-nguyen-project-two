@@ -1,35 +1,58 @@
 #contact header {
-    min-height: 200px;
-    flex: 1 0 0;
-    background: $orangey-yellow url(../../assets/assets/contact-image-1.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+    display: flex;
+    flex-flow: column nowrap;
     position: relative;
-    & h1 {
+    figure {
+        width: 100%;
+        flex: 1 0 0;
+        display: flex;
+        & img {
+            flex: 1 0 0;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+    h1 {
+        font-size: 3.5rem;
         text-transform: uppercase;
-        margin: 0 25px 0;
-        @include position(absolute, 0, auto, auto, 0, auto);
+        margin: 0;
+        text-align: center;
+        background: $accent;
+    }
+}
+
+#contact main {
+    background-color: $white-shade;
+    display: flex;
+    flex-flow: column nowrap;
+    flex: 1 0 0;
+    .wrapper{
+        padding: 0 25px;
+        height: auto;
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-evenly;
     }
 }
 
 form {
-    padding: 25px;
+    padding: 25px 0;
     display: flex;
     flex-flow: row wrap;
     gap: 10px;
-    & #name, & #email {
-        flex: 1 0 0;
-        padding: 10px;
+    #name, #email {
+        flex: 1 0 calc(50% - 50px);
+        padding: 10px 0 10px 10px;
+        min-width: 150px;
         border: none;
     }
-    & #message {
-        flex: 1 0 calc(100vw - 50px);
+    #message {
+        flex: 1 0 calc(100% - 50px);
         border: none;
         padding: 10px;
     }
-    & button {
-        flex: 1 0 calc(100vw - 50px);
+    button {
+        flex: 1 0 calc(100% - 50px);
         border: none;
         background-color: $accent;
         padding: 5px;
@@ -38,28 +61,30 @@ form {
 }
 
 .contact-info { 
-    background-color: $white; 
-    & .social-media {
+    background-color: $white;
+    display: flex;
+    flex-flow: column nowrap; 
+    .social-media {
         display: flex;
         flex-flow: row nowrap;
         justify-content: space-evenly;
         padding: 10px 25px;
-        & a {
+        a {
             display: flex;
             justify-content: center;
             align-items: center;
             flex: 0 0 10vw;
-            height: 10vw;
+            padding: 25px 0;
             text-align: center;
             color: $orangey-yellow;
         }
     }
-    & .address {
+    .address {
         display: flex;
         flex-flow: column nowrap;
         align-items: center;
         padding: 0 25px 25px;
-        & p { 
+        p { 
             margin: 0; 
             text-align: center;
         }
