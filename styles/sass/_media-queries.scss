@@ -16,7 +16,7 @@
                 justify-content: space-evenly;
                 li {  
                     &:nth-child(3) {
-                        height: auto;
+                        display: block;
                         background: $orangey-yellow;
                         color: $black;
                         font-weight: 700;
@@ -80,6 +80,29 @@
                     }
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 600px) {
+    input#menu:checked ~ nav { transform: translateX(-100vw); }
+    nav ul { 
+        padding: 20px 50px;
+        width: 100vw; 
+    }
+    header p { display: none; }
+    #home {
+        .title-text { display: none; }
+        header .wrapper .title {
+            h3 { 
+                visibility: visible;
+                text-align: center;
+                font-size: 6vw;
+                margin: 0 0 10px 0;
+                color: $white;
+                transform: translateY(50px); 
+            }
+            h1 { transform: translateY(20px); }
         }
     }
 }

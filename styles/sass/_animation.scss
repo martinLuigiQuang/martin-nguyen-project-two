@@ -1,0 +1,10 @@
+@keyframes top-shadow {
+    0% { 
+        transform: translate(0, 0); 
+        opacity: 0.5;
+    }
+    100% { 
+        transform: translate(30px, 50px); 
+        opacity: 0; 
+    }
+}

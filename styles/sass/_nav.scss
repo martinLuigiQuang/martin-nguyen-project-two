@@ -9,51 +9,54 @@ header p {
     transition: transform 0.5s;
 }
 nav {
-    @include position(absolute, 1, 0, 0, auto, 100vw);
+    @include position(fixed, 1, 0, 0, auto, 100vw);
     transition: transform 0.5s;
+    ul {
+        @include resize(50vw, auto);
+        padding: 20px;
+        margin: 0;
+        background-color: $orangey-yellow;
+        display: flex;
+        flex-flow: column nowrap;
+        li {
+            padding: 20px;
+            a:hover, a:focus, a:active { color: $white-shade; }
+            &:nth-child(3) {
+                text-transform: uppercase;
+                display: none;
+            }
+        }
+    }
 }
 input#menu {
-    @include position(absolute, 3, 15px, 25px);
+    @include position(fixed, 4, 15px, 25px);
     @include resize(50px, 50px);
     cursor: pointer;
     opacity: 0;
-    &:checked ~ nav { transform: translateX(-50vw); }
+    &:checked ~ nav { transform: translateX(-50vw); z-index: 2;}
     &:checked ~ .bar { transform: translateY(10px) rotate(45deg); }
     &:checked ~ .bar:after { transform: translateY(-20px) rotate(-90deg); }
     &:checked ~ .bar:before { 
         transform: translateY(-10px) rotate(-45deg);
         opacity: 0;
-        transition: opacity 0.5s; 
     }
     &:checked ~ p { transform: translateX(-50vw); }
 }
 .bar {
-    @include position(absolute, 2, 25px, 25px);
+    @include position(fixed, 3, 25px, 25px);
     @include resize(50px, 5px);
     border-radius: 5px;
     background-color: $black;
-    transition: transform 0.5s, opacity 1s;
+    transition: transform 0.5s;
     &:before, &:after { 
         content: "";
-        @extend .bar;
-        right: 0; 
+        position: absolute;
+        @include resize(50px, 5px);
+        border-radius: 5px;
+        background-color: $black;
+        transition: transform 0.5s;
     }
     &:before { top: 10px; }
     &:after { top: 20px; }
 }
-ul {
-    @include resize(50vw, auto);
-    padding: 20px;
-    margin: 0;
-    background-color: $orangey-yellow;
-    display: flex;
-    flex-flow: column nowrap;
-    li {
-        a:hover, a:focus { color: $white-shade; }
-        &:nth-child(3) {
-            text-transform: uppercase;
-            height: 0;
-            overflow: hidden;
-        }
-    }
-}
+
