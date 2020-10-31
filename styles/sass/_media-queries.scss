@@ -1,13 +1,20 @@
-@media (min-width: 768px) {
+@media (min-width: 900px) {
     html { font-size: 62.5%; }
-    a, p { font-size: 2rem; }
-    #contact {
+    a, p { font-size: 1.6rem; }
+    #contact, #home, #blog {
+        p { text-align: left; }
         .wrapper { margin: 0 auto; }
-        .bar,
-        #menu { display: none; }
+        header {
+            height: 40vw;
+            max-height: 512px;
+            .wrapper { 
+                height: calc(40vw - 72px); 
+                max-height: 440px;
+            }
+        }
         nav {
-           position: relative;
-           left: 0;
+            position: relative;
+            left: 0;
             ul { 
                 @include resize(100%, auto);
                 padding: 20px 25%;
@@ -15,19 +22,28 @@
                 flex-flow: row nowrap;
                 justify-content: space-evenly;
                 li {  
+                    padding: 0;
                     &:nth-child(3) {
                         display: block;
                         background: $orangey-yellow;
                         color: $black;
                         font-weight: 700;
                     }
-                    a { padding: 0; }
+                    a { 
+                        margin: 0;
+                        padding: 0; 
+                    }
                 }
             }
         }
+        footer {
+            .wrapper { width: calc(100% - 200px); }
+        }
+    }
+    .bar,
+    #menu { display: none; }
+    #contact {
         header {
-            height: calc(25vw + 72px);
-            max-height: 392px;
             h1 { 
                 font-size: 6rem;
                 position: absolute;
@@ -80,6 +96,167 @@
                     }
                 }
             }
+        }
+    }
+
+    #home {
+        .about, .contents, .info, .journey, .instagram {
+            .wrapper { width: calc(100% - 200px); }
+        }
+        header {
+            ul, 
+            li a { background: $orangey-yellow; }
+            .wrapper {
+                flex-flow: row nowrap;
+                figure.sophie  {
+                    &:hover, &:focus, &:active,
+                    img:hover, img:focus, img:active {
+                        img {
+                            transform: translate(-90px, 20px) scale(0.9);
+                            
+                            box-shadow: 35px 35px white;
+                        }
+                    }
+                    img {
+                        z-index: 10;
+                        max-width: 384px;
+                        transform: translate(-100px, 30px) scale(0.9);
+                        transition: transform 1s, box-shadow 1s;
+                    }
+                }
+            }
+            .title { transform: translateY(-50px); }
+        }
+        .about {
+            .wrapper { 
+                align-items: flex-start;
+                padding: 50px 0; 
+            }
+        }
+        .contents {
+            .wrapper {
+                flex-flow: row wrap;
+                gap: 50px;
+            }
+            .image1, .image2,
+            .text1, .text2 {
+                flex-grow: 1;
+                width: calc(50% - 50px);
+            }
+            .text1, .text2 {
+                margin: 0;
+                h3 { margin-top: 0; }
+            }
+            .text1 { 
+                align-self: flex-end;
+                align-items: flex-start;
+                margin-left: 50px; 
+            }
+            .text2 { 
+                align-self: flex-start;
+                align-items: flex-end; 
+                order: 3;
+                margin-right: 50px;
+                padding-right: 25px;
+                p { text-align: right; } 
+            }
+            .image1 {
+                transform: translate(50px, -25px);
+                position: relative;
+                transition: transform 1s;
+                img { 
+                    transform: translate(-25px, -25px);
+                    transition: transform 1s; 
+                }
+                &:before {
+                    position: absolute;
+                    left: -150px;
+                    content: "";
+                    @include resize(160px, 100%);
+                    background: $rust-red;
+                }
+                &:hover, &:focus, &:active {
+                    transform: translate(25px, -25px);
+                    img { transform: translate(-25px, 25px) scale(1.2); }
+                }
+            }
+            .image2 { 
+                transform: translate(-50px, 50px);
+                position: relative;
+                order: 4; 
+                transition: transform 1s;
+                img { 
+                    transform: translate(-25px, -25px); 
+                    transition: transform 1s;
+                }
+                &:before {
+                    position: absolute;
+                    right: -150px;
+                    content: "";
+                    @include resize(160px, 100%);
+                    background: $orangey-yellow;
+                }
+                &:hover, &:focus, &:active {
+                    transform: translate(25px, 25px);
+                    img { transform: translate(-25px, 25px) scale(1.2); }
+                }
+            }
+        }
+        .info {
+            .wrapper {
+                flex-flow: row wrap;
+                justify-content: space-between;
+                margin: 100px 0;
+                h3 { text-align: left; }
+                p { display: block; }
+                .icon { align-self: flex-start; }
+                .icon ~ div { width: calc(100% - 75px); }
+            }
+            &--photos,
+            &--blog,
+            &--about,
+            &--phone {
+                border: none;
+                flex-flow: row nowrap;
+                width: 50%;
+                gap: 10px;
+                &:hover, &:focus, &:active { background: none; }
+            }
+        }
+        .journey {
+            width: 100%;
+            .break { 
+                @include resize(100%, 30vw);
+                max-height: 384px;    
+            }
+            .wrapper {
+                margin: 50px 0;
+                flex-flow: row nowrap;
+                gap: 50px;
+                figure {
+                    background: none;
+                    max-width: 320px;
+                    padding: 0;
+                    box-shadow: -25px -25px $white-shade;
+                    transition: box-shadow 1s;
+                    &:before, &:after { display: none; }
+                    img { 
+                        width: 100%;
+                        box-shadow: 25px 25px $orangey-yellow;
+                        transition: box-shadow 1s; 
+                    }
+                    &:hover, &:focus, &:active {
+                        box-shadow: -35px -35px $orangey-yellow;
+                        img { box-shadow: 35px 35px $rust-red; }
+                    }
+                }
+                .text {
+                    align-items: flex-start;
+                }
+            }
+        }
+        .instagram {
+            padding: 50px 0;
         }
     }
 }

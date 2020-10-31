@@ -2,16 +2,22 @@
     footer {
         width: 100vw;
         display: flex;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
         background: $black;
-    }
-    
-    footer p {
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        color: $white-shade;
+        .wrapper {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: calc(100vw - 50px);
+            height: auto;
+            p {
+                margin: 0;
+                padding: 10px 0;
+                text-align: center;
+                color: $white-shade;
+            }
+        }
     }
 }
 
