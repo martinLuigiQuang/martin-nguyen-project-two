@@ -49,9 +49,7 @@ ul {
     display: flex;
     flex-flow: column nowrap;
     li {
-        a {
-            padding: 20px 20px 20px 0;
-        }
+        a:hover, a:focus { color: $white-shade; }
         &:nth-child(3) {
             text-transform: uppercase;
             height: 0;

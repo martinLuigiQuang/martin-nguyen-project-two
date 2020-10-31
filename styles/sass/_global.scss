@@ -8,17 +8,6 @@ $rust-red: #a82706;
 $white-shade: #f0efed;
 $white: #f6f6f6;
 
-// OUTER WRAPPER
-.wrapper {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100vh;
-    width: 100vw;
-    max-width: 1280px;
-    overflow: hidden;
-}
-
 // MIXINS
 @mixin font-def($font1, $font2, $color, $letter-spacing:auto, $line-height:auto, $text-align:left) {
     font-family: $font1, $font2;

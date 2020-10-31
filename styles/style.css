@@ -239,23 +239,6 @@ figure {
   overflow: hidden;
 }
 
-.wrapper {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  height: 100vh;
-  width: 100vw;
-  max-width: 1280px;
-  overflow: hidden;
-}
-
 html {
   font-size: 50%;
 }
@@ -408,13 +391,46 @@ ul {
           flex-flow: column nowrap;
 }
 
-ul li a {
-  padding: 20px 20px 20px 0;
+ul li a:hover, ul li a:focus {
+  color: #f0efed;
 }
 
 ul li:nth-child(3) {
   text-transform: uppercase;
   height: 0;
+  overflow: hidden;
+}
+
+#home .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  width: 100vw;
+  max-width: 1280px;
+}
+
+#contact .wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  height: 100vh;
+  width: 100vw;
+  max-width: 1280px;
   overflow: hidden;
 }
 
@@ -485,7 +501,7 @@ ul li:nth-child(3) {
           justify-content: space-evenly;
 }
 
-form {
+#contact form {
   padding: 25px 0;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -497,7 +513,7 @@ form {
   gap: 10px;
 }
 
-form #name, form #email {
+#contact form #name, #contact form #email {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 calc(50% - 50px);
           flex: 1 0 calc(50% - 50px);
@@ -506,7 +522,7 @@ form #name, form #email {
   border: none;
 }
 
-form #message {
+#contact form #message {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 calc(100% - 50px);
           flex: 1 0 calc(100% - 50px);
@@ -514,7 +530,7 @@ form #message {
   padding: 10px;
 }
 
-form button {
+#contact form button {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 calc(100% - 50px);
           flex: 1 0 calc(100% - 50px);
@@ -524,7 +540,7 @@ form button {
   text-transform: uppercase;
 }
 
-.contact-info {
+#contact .contact-info {
   background-color: #f6f6f6;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -535,7 +551,7 @@ form button {
           flex-flow: column nowrap;
 }
 
-.contact-info .social-media {
+#contact .contact-info .social-media {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -549,7 +565,7 @@ form button {
   padding: 10px 25px;
 }
 
-.contact-info .social-media a {
+#contact .contact-info .social-media a {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -567,7 +583,7 @@ form button {
   color: #f6a823;
 }
 
-.contact-info .address {
+#contact .contact-info .address {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -581,7 +597,7 @@ form button {
   padding: 0 25px 25px;
 }
 
-.contact-info .address p {
+#contact .contact-info .address p {
   margin: 0;
   text-align: center;
 }

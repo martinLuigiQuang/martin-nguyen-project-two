@@ -1,95 +1,109 @@
-#contact header {
-    display: flex;
-    flex-flow: column nowrap;
-    position: relative;
-    figure {
-        width: 100%;
-        flex: 1 0 0;
+#contact {
+    .wrapper {
         display: flex;
-        & img {
-            flex: 1 0 0;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 100vh;
+        width: 100vw;
+        max-width: 1280px;
+        overflow: hidden;
+    }
+    
+    header {
+        display: flex;
+        flex-flow: column nowrap;
+        position: relative;
+        figure {
             width: 100%;
-            object-fit: cover;
-        }
-    }
-    h1 {
-        font-size: 3.5rem;
-        text-transform: uppercase;
-        margin: 0;
-        text-align: center;
-        background: $accent;
-    }
-}
-
-#contact main {
-    background-color: $white-shade;
-    display: flex;
-    flex-flow: column nowrap;
-    flex: 1 0 0;
-    .wrapper{
-        padding: 0 25px;
-        height: auto;
-        display: flex;
-        flex-flow: column nowrap;
-        justify-content: space-evenly;
-    }
-}
-
-form {
-    padding: 25px 0;
-    display: flex;
-    flex-flow: row wrap;
-    gap: 10px;
-    #name, #email {
-        flex: 1 0 calc(50% - 50px);
-        padding: 10px 0 10px 10px;
-        min-width: 150px;
-        border: none;
-    }
-    #message {
-        flex: 1 0 calc(100% - 50px);
-        border: none;
-        padding: 10px;
-    }
-    button {
-        flex: 1 0 calc(100% - 50px);
-        border: none;
-        background-color: $accent;
-        padding: 5px;
-        text-transform: uppercase;
-    }
-}
-
-.contact-info { 
-    background-color: $white;
-    display: flex;
-    flex-flow: column nowrap; 
-    .social-media {
-        display: flex;
-        flex-flow: row nowrap;
-        justify-content: space-evenly;
-        padding: 10px 25px;
-        a {
+            flex: 1 0 0;
             display: flex;
-            justify-content: center;
-            align-items: center;
-            flex: 0 0 10vw;
-            padding: 25px 0;
+            & img {
+                flex: 1 0 0;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+        h1 {
+            font-size: 3.5rem;
+            text-transform: uppercase;
+            margin: 0;
             text-align: center;
-            color: $orangey-yellow;
+            background: $accent;
         }
     }
-    .address {
+
+    main {
+        background-color: $white-shade;
         display: flex;
         flex-flow: column nowrap;
-        align-items: center;
-        padding: 0 25px 25px;
-        p { 
-            margin: 0; 
-            text-align: center;
+        flex: 1 0 0;
+        .wrapper{
+            padding: 0 25px;
+            height: auto;
+            display: flex;
+            flex-flow: column nowrap;
+            justify-content: space-evenly;
         }
     }
-}
+
+    form {
+        padding: 25px 0;
+        display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
+        #name, #email {
+            flex: 1 0 calc(50% - 50px);
+            padding: 10px 0 10px 10px;
+            min-width: 150px;
+            border: none;
+        }
+        #message {
+            flex: 1 0 calc(100% - 50px);
+            border: none;
+            padding: 10px;
+        }
+        button {
+            flex: 1 0 calc(100% - 50px);
+            border: none;
+            background-color: $accent;
+            padding: 5px;
+            text-transform: uppercase;
+        }
+    }
+    
+    .contact-info { 
+        background-color: $white;
+        display: flex;
+        flex-flow: column nowrap; 
+        .social-media {
+            display: flex;
+            flex-flow: row nowrap;
+            justify-content: space-evenly;
+            padding: 10px 25px;
+            a {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex: 0 0 10vw;
+                padding: 25px 0;
+                text-align: center;
+                color: $orangey-yellow;
+            }
+        }
+        .address {
+            display: flex;
+            flex-flow: column nowrap;
+            align-items: center;
+            padding: 0 25px 25px;
+            p { 
+                margin: 0; 
+                text-align: center;
+            }
+        }
+    }
+}  
+
+
 
 
 
