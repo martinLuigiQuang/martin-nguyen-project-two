@@ -338,8 +338,8 @@
             background: white;
             padding: 25px;
             gap: 25px;
-            figure img { border-radius: 0; }
-            .text {
+            &--avatar img { border-radius: 0; }
+            &--text {
                 display: flex;
                 flex-flow: column nowrap;
             }
@@ -350,8 +350,8 @@
             background: white;
             padding: 25px;
             gap: 25px;
-            figure img { border-radius: 0; }
-            .text {
+            &--avatar img { border-radius: 0; }
+            &--text {
                 display: flex;
                 flex-flow: column nowrap;
             }

@@ -452,6 +452,232 @@ form button {
   cursor: pointer;
 }
 
+input#continue-reading {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 10px;
+  left: auto;
+  z-index: 4;
+  cursor: pointer;
+  outline: 0;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+}
+
+input#continue-reading:checked ~ .read-more-button:before {
+  content: "Less";
+}
+
+input#continue-reading:checked ~ .hidden::before {
+  display: none;
+}
+
+input#continue-reading:checked ~ .hidden {
+  height: auto;
+  margin-bottom: 50px;
+}
+
+input#continue-reading:checked ~ .hidden p {
+  display: block;
+}
+
+.read-more-button {
+  width: 150px;
+  height: 50px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: 10px;
+  left: auto;
+  z-index: 3;
+  padding: 15px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  cursor: pointer;
+  background: #4f4f4f;
+}
+
+.read-more-button:before {
+  content: "Full story";
+  width: 150px;
+  height: auto;
+  font-family: 'Lora', serif;
+  font-size: 2.4rem;
+  color: white;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+input#comment1 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 4;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+input#comment1:checked {
+  width: 100vw;
+  height: 1000vh;
+  left: -25px;
+  z-index: 999;
+}
+
+input#comment1:checked ~ .comment1 {
+  position: relative;
+}
+
+input#comment1:checked ~ .comment1--text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #285e64;
+  opacity: 0.9;
+  padding: 25px;
+  position: absolute;
+  top: -100px;
+  right: auto;
+  bottom: auto;
+  left: -25px;
+  z-index: 10;
+  width: 75vw;
+  height: auto;
+  max-width: 500px;
+}
+
+input#comment1:checked ~ .comment1--text p {
+  font-size: 16px;
+  text-align: left;
+  color: white;
+}
+
+input#comment1:checked ~ .comment1--text span {
+  font-weight: 700;
+}
+
+input#comment1:checked ~ .comment1--text .date {
+  margin: 10px 0 25px;
+  font-style: italic;
+}
+
+input#comment1:checked ~ .comment1--avatar:before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url(/assets/assets/blog-image-3.jpg);
+  position: absolute;
+  top: -150px;
+  right: auto;
+  bottom: auto;
+  left: -25px;
+  z-index: 11;
+}
+
+input#comment2 {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  top: auto;
+  right: auto;
+  bottom: auto;
+  left: auto;
+  z-index: 4;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  cursor: pointer;
+  outline: 0;
+}
+
+input#comment2:checked {
+  width: 100vw;
+  height: 1000vh;
+  right: -25px;
+  z-index: 999;
+}
+
+input#comment2:checked ~ .comment2 {
+  position: relative;
+}
+
+input#comment2:checked ~ .comment2--text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+  background: #285e64;
+  opacity: 0.9;
+  padding: 25px;
+  position: absolute;
+  top: -100px;
+  right: -25px;
+  bottom: auto;
+  left: auto;
+  z-index: 10;
+  width: 75vw;
+  height: auto;
+  max-width: 500px;
+}
+
+input#comment2:checked ~ .comment2--text p {
+  font-size: 16px;
+  text-align: left;
+  color: white;
+}
+
+input#comment2:checked ~ .comment2--text span {
+  font-weight: 700;
+}
+
+input#comment2:checked ~ .comment2--text .date {
+  margin: 10px 0 25px;
+  font-style: italic;
+}
+
+input#comment2:checked ~ .comment2--avatar:before {
+  content: "";
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background: url(/assets/assets/blog-image-4.jpg);
+  position: absolute;
+  top: -150px;
+  right: -25px;
+  bottom: auto;
+  left: auto;
+  z-index: 11;
+}
+
 .home h2 {
   text-transform: uppercase;
   font-size: 3rem;
@@ -1084,7 +1310,7 @@ form button {
   text-align: center;
 }
 
-.blog .wrapper {
+.blog {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1099,7 +1325,7 @@ form button {
   min-height: 100vh;
   width: 100vw;
   max-width: 1280px;
-  overflow: hidden;
+  margin: 0 auto;
 }
 
 .blog a {
@@ -1187,9 +1413,21 @@ form button {
 
 .blog .blog-post {
   border-bottom: 5px solid #f6a823;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
 }
 
 .blog .blog-post h2, .blog .blog-post p {
+  width: 100%;
   text-align: left;
 }
 
@@ -1211,6 +1449,26 @@ form button {
 }
 
 .blog .blog-post .hidden {
+  width: 100%;
+  height: 50px;
+  position: relative;
+}
+
+.blog .blog-post .hidden:before {
+  content: "";
+  width: 100vw;
+  height: 250px;
+  position: absolute;
+  top: -200px;
+  right: -25px;
+  bottom: auto;
+  left: auto;
+  z-index: 0;
+  background: -webkit-gradient(linear, left top, left bottom, from(#f0efed27), to(lightgrey));
+  background: linear-gradient(#f0efed27, lightgrey);
+}
+
+.blog .blog-post .hidden p {
   display: none;
 }
 
@@ -1237,20 +1495,20 @@ form button {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  position: relative;
 }
 
-.blog .comment1 figure img, .blog .comment2 figure img {
+.blog .comment1--avatar img, .blog .comment2--avatar img {
   width: 100px;
   border-radius: 50%;
 }
 
-.blog .comment1 .text, .blog .comment2 .text {
+.blog .comment1--text, .blog .comment2--text {
   display: none;
 }
 
 .home footer, .contact footer, .blog footer {
-  width: 100vw;
-  padding: 10px 25px;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1302,9 +1560,9 @@ form button {
             transform: translate(0, 70px) scale(1.3) rotate(0);
   }
   12% {
-    z-index: 999;
+    z-index: 1;
   }
-  60% {
+  90% {
     z-index: 0;
   }
   100% {
@@ -1319,9 +1577,9 @@ form button {
             transform: translate(0, 70px) scale(1.3) rotate(0);
   }
   12% {
-    z-index: 999;
+    z-index: 1;
   }
-  60% {
+  90% {
     z-index: 0;
   }
   100% {
@@ -1336,9 +1594,9 @@ form button {
             transform: translate(10px, 70px) rotate(0);
   }
   12% {
-    z-index: 999;
+    z-index: 1;
   }
-  60% {
+  90% {
     z-index: 0;
   }
   100% {
@@ -1353,9 +1611,9 @@ form button {
             transform: translate(10px, 70px) rotate(0);
   }
   12% {
-    z-index: 999;
+    z-index: 1;
   }
-  60% {
+  90% {
     z-index: 0;
   }
   100% {
@@ -1866,10 +2124,10 @@ form button {
     padding: 25px;
     gap: 25px;
   }
-  .blog .comment1 figure img {
+  .blog .comment1--avatar img {
     border-radius: 0;
   }
-  .blog .comment1 .text {
+  .blog .comment1--text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -1890,10 +2148,10 @@ form button {
     padding: 25px;
     gap: 25px;
   }
-  .blog .comment2 figure img {
+  .blog .comment2--avatar img {
     border-radius: 0;
   }
-  .blog .comment2 .text {
+  .blog .comment2--text {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
