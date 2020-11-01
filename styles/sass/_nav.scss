@@ -1,3 +1,7 @@
+.home nav li:nth-child(1) a { color: $white-shade; }
+.blog nav li:nth-child(4) a { color: $white-shade; }
+.contact nav li:nth-child(5) a { color: $white-shade; }
+
 nav {
     @include position(fixed, 1, 0, 0, auto, 100vw);
     transition: transform 0.5s;
