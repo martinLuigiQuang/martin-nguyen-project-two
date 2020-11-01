@@ -1,4 +1,4 @@
-#home {
+.home {
     h2 { 
         text-transform: uppercase;
         font-size: 3rem; 
@@ -28,9 +28,12 @@
     }
 
     header {
+        display: flex;
+        flex-flow: column nowrap;
+        justify-content: space-between;
         position: relative;
         flex: 1 0 0;
-        max-height: 40vh;
+        max-height: 400px;
         background: $orangey-yellow;
         ul { background: $accent; }
         .wrapper {
@@ -39,26 +42,27 @@
             justify-content: flex-end;
             overflow: visible;
             .title {
-                position: relative;
-                align-self: center;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
                 flex: 1 0 0;
                 .title-text {
                     @include resize(110px, 110px);
-                    position: absolute;
-                    left: 82px;
-                    bottom: -12px;
-                    img { @include resize(100px, 65px) }
+                    animation: rotate-small-screen 4s linear infinite;
+                    img { @include resize(100px, 65px); }
                 }
-                h3 { visibility: hidden; }
                 h1 {
                     text-align: center;
                     text-transform: uppercase;
-                    font-size: 10rem;
+                    transform: translate(10px, -30%);
+                    font-size: 4rem;
                     margin: 0;
                 }
             }
             figure.sophie img {
-                width: 30vw;
+                width: 40vw;
+                max-width: 180px;
                 box-shadow: 10px 10px white;
                 transform: translate(20px, 20px);
             }
@@ -70,11 +74,6 @@
             padding: 0;
             background: none;
             color: $black;
-        }
-        &:hover, &:focus {
-            .title-text {
-                animation: rotate 4s linear infinite;
-            }
         }
     }
 
@@ -111,6 +110,7 @@
             flex-direction: column;
             align-items: center;
             margin: 50px 0;
+            h3 { text-align: center; }
         }
         .image1 {
             width: calc(100% + 50px);
@@ -233,6 +233,7 @@
                 display: flex;
                 flex-direction: column;
                 align-items: center;
+                h2 { text-align: center; }
             }
         }
     }

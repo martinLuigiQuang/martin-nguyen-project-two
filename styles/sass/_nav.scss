@@ -1,18 +1,8 @@
-header p {
-    @include position(absolute, 4, 120px, 0, auto, 100vw);
-    width: 50vw;
-    text-align: center;
-    font-size: 2rem;
-    background: $grey;
-    color: $white-shade;
-    padding: 10px 0;
-    transition: transform 0.5s;
-}
 nav {
     @include position(fixed, 1, 0, 0, auto, 100vw);
     transition: transform 0.5s;
     ul {
-        @include resize(50vw, auto);
+        @include resize(100vw, auto);
         padding: 20px;
         margin: 0;
         background-color: $orangey-yellow;
@@ -35,14 +25,13 @@ input#menu {
     @include resize(50px, 50px);
     cursor: pointer;
     opacity: 0;
-    &:checked ~ nav { transform: translateX(-50vw); z-index: 2;}
+    &:checked ~ nav { transform: translateX(-100vw); z-index: 2;}
     &:checked ~ .bar { transform: translateY(10px) rotate(45deg); }
     &:checked ~ .bar:after { transform: translateY(-20px) rotate(-90deg); }
     &:checked ~ .bar:before { 
         transform: translateY(-10px) rotate(-45deg);
         opacity: 0;
     }
-    &:checked ~ p { transform: translateX(-50vw); }
 }
 .bar {
     @include position(fixed, 3, 25px, 25px);
