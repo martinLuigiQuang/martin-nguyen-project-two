@@ -1,9 +1,11 @@
+// Rotation animation of the 'Home' page title
+
 @keyframes rotate {
     0% { 
-        transform: translate(-165px, 80px) scale(1.5) rotate(0);
+        transform: translate(-125px, 70px) scale(1.5) rotate(0);
     }
     100% { 
-        transform: translate(-165px, 80px) scale(1.5) rotate(360deg);
+        transform: translate(-125px, 70px) scale(1.5) rotate(360deg);
     }
 }
 

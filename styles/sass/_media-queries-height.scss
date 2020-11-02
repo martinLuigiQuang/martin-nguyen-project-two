@@ -1,0 +1,21 @@
+// Max height media query to target vertically narrow screens
+// by changing the structure of the 'About Sophie' overlay message
+// on 'Blog' page
+
+@media (max-height: 539px) {
+    input#about-sophie {
+        &:checked ~ .about--text {
+            max-width: calc(100vw - 50px);
+            height: 260px;
+            top: 25px;
+            left: 25px;
+            padding: 25px 0 0 175px;
+            justify-content: flex-start;
+            h3, p { text-align: left; }
+        }
+        &:checked ~ figure {
+            top: 50px;
+            left: 50px;
+        }
+    }
+}

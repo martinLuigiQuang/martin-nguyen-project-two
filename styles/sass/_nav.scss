@@ -1,3 +1,6 @@
+// Styling for top navigation menu for mobile devices
+// .bar is for styling the menu hamburger
+
 .home nav li:nth-child(1) a { color: $white-shade; }
 .blog nav li:nth-child(4) a { color: $white-shade; }
 .contact nav li:nth-child(5) a { color: $white-shade; }
@@ -14,12 +17,14 @@ nav {
         flex-flow: column nowrap;
         li {
             padding: 20px;
+            a { font-size: 2rem; }
             a:hover, a:focus, a:active { 
                 color: $white-shade;
             }
             &:nth-child(3) {
                 text-transform: uppercase;
                 display: none;
+                a { font-size: 3rem; }
             }
         }
     }
@@ -27,10 +32,16 @@ nav {
 input#menu {
     @include position(fixed, 4, 15px, 25px);
     @include resize(50px, 50px);
-    cursor: pointer;
     opacity: 0;
-    &:checked ~ nav { transform: translateX(-100vw); z-index: 2;}
-    &:checked ~ .bar { transform: translateY(10px) rotate(45deg); }
+    &:checked { z-index: 22; }
+    &:checked ~ nav { 
+        transform: translateX(-100vw); 
+        z-index: 20;
+    }
+    &:checked ~ .bar { 
+        transform: translateY(10px) rotate(45deg);
+        z-index: 21; 
+    }
     &:checked ~ .bar:after { transform: translateY(-20px) rotate(-90deg); }
     &:checked ~ .bar:before { 
         transform: translateY(-10px) rotate(-45deg);

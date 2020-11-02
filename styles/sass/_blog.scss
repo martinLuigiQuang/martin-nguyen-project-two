@@ -1,3 +1,5 @@
+// Styling for 'Blog' page aimed at mobile devices
+
 .blog {
     display: flex;
     flex-direction: column;
@@ -7,10 +9,17 @@
     width: 100vw;
     max-width: 1280px;
     margin: 0 auto;
+
+    h3 { font-size: 3.5rem; }
+    
     a { 
+        font-size: 2rem;
         text-transform: uppercase; 
         font-weight: 700;
     }
+
+    p { font-size: 2rem; }
+
     header {
         display: flex;
         flex-flow: column nowrap;
@@ -26,13 +35,13 @@
                 transform: rotateY(180deg);
             }
         }
-        h1 {
-            font-size: 3.5rem;
-            text-transform: uppercase;
-            margin: 0;
-            text-align: center;
-            background: $accent;
-        }
+    }
+    h1 {
+        font-size: 3.5rem;
+        text-transform: uppercase;
+        margin: 0;
+        text-align: center;
+        background: $accent;
     }
     
     main { background: $white-shade; }
@@ -44,10 +53,40 @@
         flex-flow: column nowrap;
     }
     .about {
-        display: none;
+        figure {
+            @include resize(160px, 70px);
+            @include position(fixed, 1, 5%);
+            transform: translateX(-100px);
+            background: $orangey-yellow;
+            border-radius: 70px;
+            transition: opacity 0.3s;
+        }
+        figure img {
+            @include resize(60px, 60px);
+            @include position(fixed, 1, 5px, 5px);
+            object-fit: cover;
+            border-radius: 50%;
+        }
+        &--text { display: none; }
     }
     .recent-posts {
-        display: none;
+        &--collapse-button {
+            @include resize(7px, 7px);
+            @include position(fixed, 2, 130px, auto, auto, 50px);
+            border-radius: 7px;
+            background: white;
+            &:after,
+            &:before {
+                content: "";
+                position: absolute;
+                @include resize(7px, 7px);
+                border-radius: 7px;
+                background: white;
+            }
+            &:before { right: 15px; }
+            &:after { left: 15px; }
+        }
+        &--text { display: none; }
     }
     .content { 
         width: 100%;
@@ -61,14 +100,11 @@
         flex-flow: column nowrap;
         align-items: center;
         position: relative;
-        h2, p { 
+        h3, p { 
             width: 100%;
             text-align: left; 
         }
-        h2 { 
-            font-size: 3.5rem;
-            text-transform: uppercase; 
-        }
+        h3 { text-transform: uppercase; }
         p { padding-bottom: 25px; }
         .date { font-style: italic ; }
         span { font-weight: 700; }

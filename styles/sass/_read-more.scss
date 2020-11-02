@@ -1,7 +1,110 @@
+// Set up the interactive elements on 'Blog' page for mobile devices
+// Interactive elements appear as icons or buttons on the page, which
+// opens up the hidden contents when clicked.
+// The hidden contents are deemed too long to appear on the mobile screen
+
+input#about-sophie {
+    @include resize(60px, 60px);
+    @include position(fixed, 2, 5%);
+    appearance: none;
+    &:checked {
+        @include resize(100vw, 100vh);
+        @include position(fixed, 10, 0, auto, auto, 0)
+    }
+    &:checked ~ figure {
+        @include resize(100vw, auto);
+        @include position(fixed, 6, 110px, auto, auto, calc(50vw - 75px));
+        transform: translateX(0);
+        background: $orangey-yellow;
+        border-radius: 0;
+        transition: opacity 0.3s;
+        img {
+            @include resize(auto, 210px);
+            @include position(fixed, 3);
+            object-fit: cover;
+            border-radius: 0;
+        }
+    }
+    &:checked ~ .about--text {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: center;
+        justify-content: flex-end;
+        @include resize(calc(100vw - 50px), 450px);
+        max-width: 300px;
+        background: white;
+        @include position(fixed, 5, 75px, auto, auto, 25px);
+        h4 { 
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            text-align: center; 
+        }
+        p {
+            font-size: 2rem;
+            text-align: center;
+            margin: 0 25px 30px;
+        }
+    }
+}
+
+input#recent-posts {
+    @include resize(50px, 50px);
+    @include position(fixed, 1, 110px, auto, auto, 28px);
+    appearance: none;
+    border-radius: 50%;
+    background: $orangey-yellow;
+    &:checked {
+        z-index: 10;
+        @include position(fixed, 10, 120px, 10px, auto, auto);
+        background: none;
+    }
+    &:checked ~ .recent-posts--collapse-button {
+        z-index: 10;
+        @include position(fixed, 9, 130px, 22px, auto, auto);
+        @include resize(20px, 3px);
+        border-radius: 3px;
+        background: $black;
+        transform: rotate(45deg) translate(5px, 10px);
+        &:before { display: none; }
+        &:after {
+            @include resize(20px, 3px);
+            background: $black;
+            transform: rotate(90deg) translate(0, 15px);
+        }
+    }
+    &:checked ~ .recent-posts--text {
+        display: flex;
+        flex-flow: column nowrap;
+        align-items: flex-start;
+        background: white;
+        padding: 15px;
+        @include resize(70vw, auto);
+        min-width: 260px;
+        @include position(fixed, 4, 110px, 0);
+        h4 {
+            font-size: 2.5rem;
+            text-transform: uppercase;
+            margin: 25px 0 0;
+        }
+        ul { 
+            list-style: disc;
+            padding-left: 10px;
+        }
+        ul li::marker { color: $orangey-yellow; }
+        li:nth-child(3) a {
+            font-size: 2rem;
+        }
+        a { 
+            font-size: 2rem;
+            text-transform: none;
+            font-weight: 400; 
+        }
+    }
+}
+
 input#continue-reading {
     @include resize(150px, 50px);
     @include position(absolute, 4, auto, auto, 10px, auto);
-    cursor: pointer;
     outline: 0;
     appearance: none;
     &:checked ~ .read-more-button:before { content: "Less"; }
@@ -18,7 +121,6 @@ input#continue-reading {
     padding: 15px;
     display: flex;
     align-items: center;
-    cursor: pointer;
     background: $grey;
     &:before {
         content: "Full story";
@@ -35,7 +137,6 @@ input#comment1 {
     @include resize(100px, 100px);
     @include position(absolute, 4);
     appearance: none;
-    cursor: pointer;
     outline: 0;
     &:checked { 
         @include resize(100vw, 1000vh); 
@@ -55,7 +156,7 @@ input#comment1 {
             @include resize(75vw, auto);
             max-width: 500px;
             p { 
-                font-size: 16px;
+                font-size: 2rem;
                 text-align: left;
                 color: white;
             }
@@ -79,7 +180,6 @@ input#comment2 {
     @include resize(100px, 100px);
     @include position(absolute, 4);
     appearance: none;
-    cursor: pointer;
     outline: 0;
     &:checked { 
         @include resize(100vw, 1000vh);
@@ -99,7 +199,7 @@ input#comment2 {
             @include resize(75vw, auto);
             max-width: 500px;
             p { 
-                font-size: 16px;
+                font-size: 2rem;
                 text-align: left;
                 color: white;
             }
