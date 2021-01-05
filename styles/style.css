@@ -1246,8 +1246,10 @@ input#comment2:checked ~ .comment2--avatar:before {
   width: 100%;
   height: 30vw;
   min-height: 200px;
-  background: url(assets/home-image-4.jpg);
-  background-size: cover;
+}
+
+.home .journey .break img {
+  width: 100%;
 }
 
 .home .journey .wrapper {
@@ -1274,35 +1276,11 @@ input#comment2:checked ~ .comment2--avatar:before {
           justify-content: center;
   width: 100%;
   padding: 100px 0;
-  background: white;
   position: relative;
 }
 
 .home .journey .wrapper figure img {
   z-index: 1;
-}
-
-.home .journey .wrapper figure:before, .home .journey .wrapper figure:after {
-  position: absolute;
-  width: 304px;
-  height: 304px;
-  content: "";
-  background: url(assets/home-image-5.jpg);
-  opacity: 0.5;
-}
-
-.home .journey .wrapper figure:before {
-  top: 60px;
-  left: 25px;
-  -webkit-filter: hue-rotate(50deg);
-          filter: hue-rotate(50deg);
-}
-
-.home .journey .wrapper figure:after {
-  bottom: 60px;
-  right: 25px;
-  -webkit-filter: hue-rotate(140deg);
-          filter: hue-rotate(140deg);
 }
 
 .home .journey .wrapper .text {

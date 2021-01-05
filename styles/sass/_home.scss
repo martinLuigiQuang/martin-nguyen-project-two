@@ -196,8 +196,9 @@
         .break {
             @include resize(100%, 30vw);
             min-height: 200px;
-            background: url(assets/home-image-4.jpg);
-            background-size: cover;
+            img {
+                width: 100%;
+            }
         }
         .wrapper {
             width: calc(100% - 50px);
@@ -210,27 +211,8 @@
                 justify-content: center;
                 width: 100%;
                 padding: 100px 0;
-                background: white;
                 position: relative;
                 img { z-index: 1; }
-                &:before,
-                &:after {
-                    position: absolute;
-                    @include resize(304px, 304px);
-                    content: "";
-                    background: url(assets/home-image-5.jpg);
-                    opacity: 0.5;
-                }
-                &:before { 
-                    top: 60px;
-                    left: 25px;
-                    filter: hue-rotate(50deg);
-                }
-                &:after { 
-                    bottom: 60px;
-                    right: 25px;
-                    filter: hue-rotate(140deg);
-                }
             }
             .text {
                 padding: 25px 0 50px;
