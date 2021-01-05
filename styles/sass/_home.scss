@@ -5,7 +5,7 @@
     flex-direction: column;
     align-items: center;
     height: auto;
-    width: 100vw;
+    width: 100%;
     max-width: 1280px;
     margin: 0 auto;
 
@@ -34,7 +34,7 @@
         position: relative;
         flex: 1 0 0;
         max-height: 400px;
-        width: 100vw;
+        width: 100%;
         background: $orangey-yellow;
         ul { background: $accent; }
         .wrapper {
@@ -63,7 +63,7 @@
             }
         }
         figure.sophie img {
-            width: 30vw;
+            width: 100vw;
             max-width: 180px;
             box-shadow: 10px 10px white;
             transform: translate(20px, 20px);
@@ -101,7 +101,7 @@
         align-items: center;
         background: white;
         .wrapper {
-            width: calc(100vw - 50px);
+            width: calc(100% - 50px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -173,7 +173,7 @@
             flex-direction: column;
             align-items: center;
             cursor: pointer;
-            width: 100vw;
+            width: 100%;
             padding-top: 25px;
             border-top: 1px solid $accent;
         }
@@ -194,13 +194,13 @@
         background: $white-shade;
         a:hover, a:focus, a:active { background: $orangey-yellow; }
         .break {
-            @include resize(100vw, 30vw);
+            @include resize(100%, 30vw);
             min-height: 200px;
             background: url(/assets/assets/home-image-4.jpg);
             background-size: cover;
         }
         .wrapper {
-            width: calc(100vw - 50px);
+            width: calc(100% - 50px);
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -208,7 +208,7 @@
             figure {
                 display: flex;
                 justify-content: center;
-                width: 100vw;
+                width: 100%;
                 padding: 100px 0;
                 background: white;
                 position: relative;
@@ -246,7 +246,7 @@
         display: flex;
         justify-content: center;
         .wrapper {
-            width: calc(100vw - 50px);
+            width: calc(100% - 50px);
             display: flex;
             flex-flow: row wrap;
             gap: 20px;
@@ -259,9 +259,6 @@
             img { 
                 width: 100%; 
                 border: 5px solid white;
-            }
-            a:hover, a:focus, a:active {
-                img { border: 5px solid $accent; }
             }
         }
     }

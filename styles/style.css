@@ -206,6 +206,10 @@ figure {
   margin: 0;
 }
 
+img {
+  display: block;
+}
+
 input[type="checkbox"] {
   cursor: pointer;
   outline: 0;
@@ -893,7 +897,7 @@ input#comment2:checked ~ .comment2--avatar:before {
       -ms-flex-align: center;
           align-items: center;
   height: auto;
-  width: 100vw;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -938,7 +942,7 @@ input#comment2:checked ~ .comment2--avatar:before {
       -ms-flex: 1 0 0px;
           flex: 1 0 0;
   max-height: 400px;
-  width: 100vw;
+  width: 100%;
   background: #f6a823;
 }
 
@@ -1001,7 +1005,7 @@ input#comment2:checked ~ .comment2--avatar:before {
 }
 
 .home header figure.sophie img {
-  width: 30vw;
+  width: 100vw;
   max-width: 180px;
   -webkit-box-shadow: 10px 10px white;
           box-shadow: 10px 10px white;
@@ -1066,7 +1070,7 @@ input#comment2:checked ~ .comment2--avatar:before {
 }
 
 .home .contents .wrapper {
-  width: calc(100vw - 50px);
+  width: calc(100% - 50px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1203,7 +1207,7 @@ input#comment2:checked ~ .comment2--avatar:before {
       -ms-flex-align: center;
           align-items: center;
   cursor: pointer;
-  width: 100vw;
+  width: 100%;
   padding-top: 25px;
   border-top: 1px solid #05afc1;
 }
@@ -1239,7 +1243,7 @@ input#comment2:checked ~ .comment2--avatar:before {
 }
 
 .home .journey .break {
-  width: 100vw;
+  width: 100%;
   height: 30vw;
   min-height: 200px;
   background: url(/assets/assets/home-image-4.jpg);
@@ -1247,7 +1251,7 @@ input#comment2:checked ~ .comment2--avatar:before {
 }
 
 .home .journey .wrapper {
-  width: calc(100vw - 50px);
+  width: calc(100% - 50px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1268,7 +1272,7 @@ input#comment2:checked ~ .comment2--avatar:before {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  width: 100vw;
+  width: 100%;
   padding: 100px 0;
   background: white;
   position: relative;
@@ -1329,7 +1333,7 @@ input#comment2:checked ~ .comment2--avatar:before {
 }
 
 .home .instagram .wrapper {
-  width: calc(100vw - 50px);
+  width: calc(100% - 50px);
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1354,10 +1358,6 @@ input#comment2:checked ~ .comment2--avatar:before {
   border: 5px solid white;
 }
 
-.home .instagram .wrapper a:hover img, .home .instagram .wrapper a:focus img, .home .instagram .wrapper a:active img {
-  border: 5px solid #05afc1;
-}
-
 .contact {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -1371,7 +1371,7 @@ input#comment2:checked ~ .comment2--avatar:before {
           justify-content: space-between;
   height: auto;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -1534,7 +1534,7 @@ input#comment2:checked ~ .comment2--avatar:before {
           justify-content: space-between;
   height: auto;
   min-height: 100vh;
-  width: 100vw;
+  width: 100%;
   max-width: 1280px;
   margin: 0 auto;
 }
@@ -2272,7 +2272,7 @@ input#comment2:checked ~ .comment2--avatar:before {
     width: calc(100% - 200px);
   }
   .home header {
-    width: 100vw;
+    width: 100%;
     max-width: 1280px;
   }
   .home header ul, .home header li a {

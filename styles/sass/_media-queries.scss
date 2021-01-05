@@ -251,7 +251,7 @@
             .wrapper { width: calc(100% - 200px); }
         }
         header {
-            width: 100vw;
+            width: 100%;
             max-width: 1280px;
             ul, li a { background: $orangey-yellow; }
             .wrapper {
