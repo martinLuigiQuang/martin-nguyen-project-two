@@ -63,7 +63,7 @@
             }
         }
         figure.sophie img {
-            width: 100vw;
+            width: 30vw;
             max-width: 180px;
             box-shadow: 10px 10px white;
             transform: translate(20px, 20px);
@@ -196,7 +196,7 @@
         .break {
             @include resize(100%, 30vw);
             min-height: 200px;
-            background: url(/./assets/assets/home-image-4.jpg);
+            background: url(./assets/home-image-4.jpg);
             background-size: cover;
         }
         .wrapper {
@@ -218,7 +218,7 @@
                     position: absolute;
                     @include resize(304px, 304px);
                     content: "";
-                    background: url(/./assets/assets/blog-image-5.jpg);
+                    background: url(./assets/blog-image-5.jpg);
                     opacity: 0.5;
                 }
                 &:before { 
