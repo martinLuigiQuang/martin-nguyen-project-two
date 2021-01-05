@@ -196,7 +196,7 @@
         .break {
             @include resize(100%, 30vw);
             min-height: 200px;
-            background: url(../assets/home-image-4.jpg);
+            background: url(assets/home-image-4.jpg);
             background-size: cover;
         }
         .wrapper {
@@ -218,7 +218,7 @@
                     position: absolute;
                     @include resize(304px, 304px);
                     content: "";
-                    background: url(../assets/home-image-5.jpg);
+                    background: url(assets/home-image-5.jpg);
                     opacity: 0.5;
                 }
                 &:before { 
